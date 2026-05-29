@@ -56,10 +56,21 @@ the village's primary lever against groundwater depletion. Summary data:
 └── docs/              # NSS documentation (md) + strategy guides
 ```
 
+## Village Map (cadastral)
+The site now embeds an interactive Leaflet map of Loni Deokar's survey plots.
+The source `LONI-DEOKAR.gpkg` (exported from a CAD `.dwg`) was tagged EPSG:4326
+but its coordinates are actually **UTM Zone 43N metres (EPSG:32643)** — that
+mislabel is why the data never showed up on a normal map. `scripts/gpkg_to_geojson.py`
+reads the GeoPackage WKB blobs directly via SQLite, parses the CompoundCurve /
+CircularString / CurvePolygon geometries, reprojects to WGS-84 with pyproj,
+clips out the stray (0,0)-origin junk, and writes web-ready GeoJSON to
+`data/processed/geo/` (1,045 plot boundaries + 1,059 survey-number labels).
+
 ## Scripts
 - `scripts/crop_water_productivity.py` — CWP framework (FAO-56 ETc, crop ranking)
 - `scripts/analyze_mi_census.py` — filters the 6th MI Census to Pune/Indapur/Loni Devkar and summarizes irrigation + groundwater (memory-safe chunked reads)
 - `scripts/explore_mi_census.py` — inspects MI Census CSV structure without loading full files
+- `scripts/gpkg_to_geojson.py` — converts the Loni Deokar CAD GeoPackage to reprojected GeoJSON for the web map (no GDAL needed; uses pyproj + a hand-rolled WKB parser)
 - `scripts/parse_nss_metadata.py` — NSS DDI/XML metadata parser
 - `scripts/explore_state_data.py` — Excel/data explorer
 - `scripts/pdf_to_markdown.py` — converts NSS PDFs to markdown docs
@@ -76,6 +87,7 @@ the village's primary lever against groundwater depletion. Summary data:
 - [x] CWP analysis framework built and tested
 - [x] 6th MI Census acquired, filtered, and analyzed for Loni Devkar / Indapur
 - [x] Irrigation findings published to the GitHub Pages site
+- [x] Village cadastral map (CAD → reprojected GeoJSON → interactive Leaflet map)
 - [ ] Export NSS data → load Pune district records
 - [ ] Acquire remaining village sources (Agri Census, CGWB, Census 2011, IMD)
 - [ ] Nearby-village water-table comparison (143 Indapur villages)
@@ -86,6 +98,7 @@ the village's primary lever against groundwater depletion. Summary data:
 pip install -r requirements.txt
 python scripts/crop_water_productivity.py   # see the CWP comparison
 python scripts/analyze_mi_census.py         # rebuild the MI Census summary (needs raw CSVs in data/raw/mi_census_6th/)
+python scripts/gpkg_to_geojson.py           # rebuild the village map GeoJSON (needs the .gpkg)
 ```
 
 The live site is in `index.html` (GitHub Pages). The processed analysis output

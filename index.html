@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crop Water Productivity — Loni Devkar, Pune</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -13,6 +15,7 @@
         <div class="container">
             <div class="nav-brand">CWP Analysis</div>
             <ul class="nav-links">
+                <li><a href="#map-section">Map</a></li>
                 <li><a href="#problem">Problem</a></li>
                 <li><a href="#cwp-framework">Framework</a></li>
                 <li><a href="#analysis">Analysis</a></li>
@@ -42,6 +45,16 @@
                 <div class="stat-number">413132</div>
                 <div class="stat-label">Village Pincode</div>
             </div>
+        </div>
+    </section>
+
+    <!-- Village Map Section -->
+    <section id="map-section" class="analysis">
+        <div class="container">
+            <h2>Loni Deokar — Village Cadastral Map</h2>
+            <p class="note">Survey plot boundaries digitised from the village CAD drawing (LONI-DEOKAR.dwg), reprojected from UTM 43N to WGS-84. 1,045 plots, 1,059 survey numbers.</p>
+            <div id="map" style="height:520px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);"></div>
+            <p class="note" style="margin-top:1rem;">Toggle layers (top-right) to show survey-number labels. Plot outlines drawn over an OpenStreetMap basemap. Centre ≈ 18.20°N, 74.91°E.</p>
         </div>
     </section>
 
@@ -258,18 +271,23 @@
     <section id="data" class="data-status">
         <div class="container">
             <h2>Data Acquisition Status</h2>
-            <p>Real analysis begins once these sources are downloaded and processed.</p>
+            <p>Sources feeding the analysis — green are processed, amber are pending.</p>
 
             <div class="status-grid">
-                <div class="status-item pending">
-                    <div class="status-icon">⏳</div>
-                    <h4>NSS 77th Round</h4>
-                    <p>Pune district household survey</p>
+                <div class="status-item complete">
+                    <div class="status-icon">✅</div>
+                    <h4>6th MI Census</h4>
+                    <p>Analyzed — 62 wells, 100% groundwater, 23 m water table</p>
+                </div>
+                <div class="status-item complete">
+                    <div class="status-icon">✅</div>
+                    <h4>Village Cadastral Map</h4>
+                    <p>1,045 survey plots digitised from CAD &rarr; live map above</p>
                 </div>
                 <div class="status-item pending">
                     <div class="status-icon">⏳</div>
-                    <h4>6th MI Census</h4>
-                    <p>Village irrigation schemes</p>
+                    <h4>NSS 77th Round</h4>
+                    <p>Downloaded — awaiting Nesstar Explorer export</p>
                 </div>
                 <div class="status-item pending">
                     <div class="status-icon">⏳</div>
@@ -309,5 +327,6 @@
     </footer>
 
     <script src="assets/dashboard.js"></script>
+    <script src="assets/map.js"></script>
 </body>
 </html>

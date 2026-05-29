@@ -411,6 +411,16 @@ footer p {
     margin-bottom: 0.5rem;
 }
 
+/* Cadastral map plot-number labels */
+.plot-label {
+    color: #B71C1C;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff;
+    pointer-events: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {

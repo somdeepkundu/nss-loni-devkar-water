@@ -1,0 +1,21 @@
+{
+  "center": [
+    18.201405,
+    74.912556
+  ],
+  "bounds": [
+    [
+      18.170277,
+      74.893358
+    ],
+    [
+      18.223542,
+      74.934525
+    ]
+  ],
+  "source_crs": "EPSG:32643 (UTM 43N), file mislabelled as 4326",
+  "feature_counts": {
+    "plots": 1045,
+    "labels": 1059
+  }
+}

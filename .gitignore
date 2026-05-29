@@ -8,6 +8,9 @@ data/raw/
 !data/processed/
 !data/processed/indapur_irrigation_by_village.csv
 !data/processed/loni_devkar_mi_census.json
+!data/processed/geo/
+!data/processed/geo/*.geojson
+!data/processed/geo/*.json
 
 # Python
 __pycache__/
