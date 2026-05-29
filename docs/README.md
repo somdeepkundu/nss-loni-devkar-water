@@ -56,7 +56,7 @@ The NSS 77th Round data is organized by:
 For Pune district analysis, use:
 - **State Code:** 27 (Maharashtra)
 - **District Code:** 27-03 (Pune)
-- **Taluka:** Shirur (for Loni Dewakar region)
+- **Taluka:** Indapur (for Loni Devkar region, pin 413132)
 
 ## Key Variables for Water Productivity Analysis
 

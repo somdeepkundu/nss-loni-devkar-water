@@ -19,8 +19,8 @@ NSS_SOURCES = {
 
 PUNE_DISTRICT_CODE = "27"  # Maharashtra state=27, Pune district
 LONI_DEWAKAR_CODES = {
-    "taluka": "Shirur",  # Approximate taluka for Loni Dewakar
-    "village": "Loni Dewakar"
+    "taluka": "Indapur",  # Loni Devkar is in Indapur taluka, pin 413132
+    "village": "Loni Devkar"
 }
 
 class NSSDataFetcher:

@@ -77,7 +77,7 @@ def print_download_instructions():
     print("\nKey variables to look for:")
     print("   - State code (Maharashtra = 27)")
     print("   - District code (Pune = 27-03)")
-    print("   - Taluka/Block name (Shirur)")
+    print("   - Taluka/Block name (Indapur)")
     print("   - Village name (Loni Dewakar)")
     print("   - Irrigated area")
     print("   - Crop cultivated")
