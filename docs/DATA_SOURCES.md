@@ -43,12 +43,18 @@ NSS gives us **regional (district) context**; other sources give us **village/bl
 - **Latest:** Agriculture Census 2015–16 (2021–22 in progress)
 - **URL:** https://agcensus.gov.in/
 
-### B. 6th Minor Irrigation Census — Village Schedule ⭐
+### B. 6th Minor Irrigation Census — Village Schedule ⭐ ✅ DONE
 - **Granularity:** VILLAGE-LEVEL (this is the key village source)
 - **Provides:** Ground water schemes (dug wells, borewells, tube wells), surface water schemes, lift irrigation, area irrigated by each, scheme status
 - **Reference period:** 2017–18
 - **URL:** https://aikosh.indiaai.gov.in/ (search "6th Minor Irrigation Census Village Schedule")
 - **Also:** https://www.jalshakti-dowr.gov.in/irrigation-census
+- **Status:** Downloaded (7 Maharashtra CSVs, 1.3 GB) and analyzed via
+  `scripts/analyze_mi_census.py`. Output → `data/processed/loni_devkar_mi_census.json`.
+- **Loni Devkar result:** 100% groundwater-irrigated (61 dug wells + 1 deep
+  tube well, no surface water); water table 23 m pre-monsoon vs 17.4 m taluka
+  average; net irrigated area 60 ha = 100% of net sown. Per-village table for
+  all 143 Indapur villages saved to `data/processed/indapur_irrigation_by_village.csv`.
 
 ### C. CGWB — Central Ground Water Board
 - **Granularity:** Block/taluka groundwater assessment units; monitoring wells
@@ -113,12 +119,12 @@ CWP (economic)  = Crop Value (Rs/ha)  /  Water Used (m3/ha)     [Rs/m3]
 - [x] NSS 77th Round downloaded (needs extraction)
 - [ ] NSS exported to CSV via Nesstar Explorer
 - [ ] Agriculture Census 2015–16 — Pune/Indapur tables
-- [ ] 6th MI Census Village Schedule — Indapur villages
+- [x] 6th MI Census Village Schedule — Indapur villages **(analyzed)**
 - [ ] CGWB groundwater status — Indapur block
 - [ ] Census 2011 Village Directory — Loni Devkar
 - [ ] ICRISAT district CSV — Pune crop/irrigation series
 - [ ] IMD rainfall — Pune district
-- [ ] FAO Kc values for local crops (sugarcane, jowar, wheat, onion, etc.)
+- [x] FAO Kc values for local crops (sugarcane, jowar, wheat, onion, etc.) — in `scripts/crop_water_productivity.py`
 
 ---
 
