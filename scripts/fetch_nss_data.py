@@ -30,7 +30,7 @@ class NSSDataFetcher:
 
     def fetch_nss_metadata(self):
         """Fetch available NSS datasets for Pune"""
-        print("📊 NSS Data Sources for Pune District (77th Round 2019-20)")
+        print("NSS Data Sources for Pune District (77th Round 2019-20)")
         print("-" * 60)
         for key, info in NSS_SOURCES.items():
             print(f"Round: {key}")
@@ -62,14 +62,14 @@ class NSSDataFetcher:
         df = pd.DataFrame(sample_data)
         output_path = self.output_dir / "nss_77_pune_agriculture_sample.csv"
         df.to_csv(output_path, index=False)
-        print(f"\n✅ Sample NSS data structure created: {output_path}")
+        print(f"\n[OK] Sample NSS data structure created: {output_path}")
         return df
 
     def fetch_real_data(self):
         """
         Instructions to fetch actual NSS data
         """
-        print("\n📥 To fetch actual NSS data:")
+        print("\nTo fetch actual NSS data:")
         print("-" * 60)
         print("1. Visit: https://nss.mospi.gov.in/nss_documents.html")
         print("2. Download NSS 77th Round (2019-20) data files")
