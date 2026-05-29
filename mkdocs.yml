@@ -38,6 +38,7 @@ theme:
 
 extra_css:
   - https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
+  - assets/ujjaini-flow-theme.css
   - assets/extra.css
 
 extra_javascript:
