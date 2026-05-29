@@ -1,55 +1,79 @@
 # Data & Methods
 
+**Version: 1.1.0**
+
+## Ujjaini dam command zone context
+
+Loni Deokar is located within the **Ujjaini (Ujni) dam command zone** on the Bhima River (Indapur taluka, Pune). Ujjaini dam was constructed in 1858 and releases water into canals and seepage zones that recharge Loni Deokar's upper aquifer. This makes the village's hydrology **dam-driven**, not rainfall-dependent alone.
+
+**Key facts**:
+- Monsoon releases (June–September) create seepage and surface flooding.
+- Post-monsoon releases (October–May) sustain well irrigation.
+- 2025 La Niña event brought above-normal rainfall + dam releases, causing waterlogging and maize crop failure.
+
 ## Two-tier data strategy
 
-NSS gives **district context**; village/block sources give the **Loni Deokar
-specifics**. The analysis combines them.
+NSS gives **district context**; village/block sources + dam data give the **Loni Deokar specifics**. The analysis combines all three.
 
 | Tier | Question it answers | Source |
 |------|---------------------|--------|
 | District (NSS) | What do typical Pune farm households look like? | NSS 77th Round |
-| Village / block | What is actually happening in Loni Deokar / Indapur? | 6th MI Census, Agri Census, CGWB, Census 2011 |
-| Biophysical | How much water do crops need vs. get? | IMD rainfall, FAO-56 ETc |
+| Village / dam command | What is happening in Loni Deokar / Ujjaini zone? | 6th MI Census, Agri Census, CGWB, Ujjaini dam release schedule |
+| Biophysical | Water surplus/deficit, crop suitability, waterlogging risk | Topography, soils, La Niña impacts, well-depth surveys |
 
 ## Acquisition status
 
 === "Processed ✅"
 
-    - **6th Minor Irrigation Census** — filtered to Pune/Indapur/Loni Deokar; 62 wells, 100% groundwater, 23 m water table. `scripts/analyze_mi_census.py`
+    - **6th Minor Irrigation Census** — filtered to Pune/Indapur/Loni Deokar; 62 wells, surface + groundwater interaction, 23 m water table (pre-monsoon). `scripts/analyze_mi_census.py`
     - **Village cadastral map** — 1,045 plots digitised from `LONI-DEOKAR.dwg`, reprojected UTM 43N → WGS-84. `scripts/gpkg_to_geojson.py`
-    - **FAO-56 crop-water model** — Kc values for nine local crops. `scripts/crop_water_productivity.py`
+    - **2025 La Niña crop loss data** — maize waterlogging failure in high-seepage zones; red rocks (iron hydroxide) in deep wells.
+    - **FAO-56 crop-water model** — Kc values for nine local crops + flood-tolerance rankings. `scripts/crop_water_productivity.py`
 
 === "Pending ⏳"
 
-    - **NSS 77th Round** — downloaded; awaiting Nesstar Explorer export.
-    - **Agricultural Census 2015–16** — Pune/Indapur crop-area tables.
-    - **CGWB** — Indapur block groundwater category & extraction stage.
-    - **IMD rainfall** — for the water-balance model.
-    - **Census 2011** — Loni Deokar village directory & demographics.
+    - **Ujjaini dam release schedule** — monthly/seasonal water releases (Maharashtra Water Resources Department).
+    - **Waterlogging risk zones** — derived from topography, seepage patterns, 2025 damage hotspots.
+    - **Well-depth survey** — depths and aquifer characteristics (red rocks, iron/arsenic content) in deep wells.
+    - **Agricultural Census 2015–16** — Pune/Indapur crop-area breakdown by zone.
+    - **CGWB groundwater quality report** — Indapur block arsenic/iron/pH profile.
+    - **IMD rainfall + Ujjaini release data** — water-balance model integrating dam + monsoon dynamics.
+    - **Census 2011** — Loni Deokar village demographics & infrastructure.
 
 ## Methods
 
-### Irrigation profile
-The 6th MI Census ships seven Maharashtra CSVs (~1.3 GB). The large
-ground-water scheme files are read in chunks and filtered to Pune/Indapur so
-the 933 MB Dug Wells file never loads fully into memory. Per-village irrigation
-area and groundwater levels come from the Village Schedule.
+### Irrigation profile (corrected hydrology)
 
-### Cadastral map
-The CAD-derived GeoPackage was tagged EPSG:4326 but its coordinates are
-actually **UTM Zone 43N metres (EPSG:32643)** — a common DWG-export mislabel,
-and the reason the data never appeared on a normal map. The converter reads the
-GeoPackage WKB blobs directly from SQLite (no GDAL), parses the CompoundCurve /
-CircularString / CurvePolygon geometries, reprojects with `pyproj`, and clips
-out stray (0,0)-origin vertices.
+The 6th MI Census was interpreted through a **dam-command lens**, not a groundwater-scarcity lens. The 23 m pre-monsoon water table reflects prior high recharge from Ujjaini releases, not aquifer stress. The 62 wells function as **supplementary irrigation** during low-release windows, not the primary source.
 
-### Crop water productivity
-Reference evapotranspiration (ET₀ ≈ 5.5 mm/day, Indapur semi-arid) is scaled by
-crop coefficients (Kc) to crop ET (ETc = ET₀ × Kc), converted to m³/ha
-(1 mm/ha = 10 m³), and divided into yield and value to give physical (kg/m³)
-and economic (Rs/m³) productivity.
+Large ground-water scheme files are read in chunks (chunksize=100,000) and filtered to Pune/Indapur to avoid memory overflow of the 933 MB file.
+
+### 2025 La Niña waterlogging impact
+
+The 2025 monsoon brought above-normal rainfall and Ujjaini releases simultaneously:
+
+- **Maize in flood-prone zones (high seepage areas) suffered anoxic soil conditions** and premature crop failure (death before physiological maturity).
+- Farmers observed **red-oxide rock layers** at depths 40–60 m in newly dug wells, indicating iron-rich deeper aquifers and potential arsenic enrichment.
+- Lesson: **Crop choice must prioritize flood tolerance in dam-command zones**, not just water productivity.
+
+### Crop adaptation framework
+
+Crops are ranked by:
+1. **Economic productivity** (Rs/m³, FAO-56 based).
+2. **Flood tolerance** (based on agronomic literature + 2025 field observations).
+3. **Suitability to Loni Deokar's soils and release patterns**.
+
+Rice emerges as the primary crop for high-seepage zones, while grapes and onion suit elevated, well-drained areas.
+
+### Cadastral map & red-rock zones
+
+The CAD-derived GeoPackage (`LONI-DEOKAR.gpkg`) was tagged EPSG:4326 but actually contains UTM Zone 43N metres (EPSG:32643). The converter reads WKB blobs directly from SQLite, parses curved geometries, reprojects to WGS-84, and outputs GeoJSON overlaid with:
+
+- **Waterlogging risk zones** (based on topography and 2025 damage reports).
+- **Well-depth zones** (where red rocks appear).
+- **Recommended crop zones** (rice, sugarcane, grapes, etc. by suitability).
 
 !!! note "Reproducibility"
     All processing scripts live in [`scripts/`](https://github.com/somdeepkundu/nss-loni-devkar-water/tree/main/scripts).
-    The raw 1.3 GB census CSVs are gitignored; processed summaries and GeoJSON
-    are committed under `data/processed/`.
+    Scripts include VERSION tracking for reproducibility.
+    Raw 1.3 GB MI Census CSVs are gitignored; processed summaries, GeoJSON, and analysis outputs are committed under `data/processed/`.

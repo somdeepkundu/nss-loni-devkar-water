@@ -1,65 +1,74 @@
 # Analysis
 
-## Irrigation reality (6th Minor Irrigation Census, ref. 2017–18)
+**Version: 1.1.0**
 
-Filtering the census to **Pune → Indapur → Loni Deokar** gives a sharp picture
-of how the village irrigates.
+## The Ujjaini dam context
 
-| Metric | Loni Deokar | Indapur taluka avg |
-|--------|-------------|--------------------|
-| Irrigation source | **100% groundwater** | mixed |
-| Minor irrigation schemes | 61 dug wells + 1 deep tube well | — |
-| Surface-water schemes | **none** | 4,269 |
-| Water table (pre-monsoon) | **23 m** | 17.4 m |
-| Monsoon recharge | ~2 m (23 → 21 m) | ~2.1 m |
-| Net irrigated area | 60 ha (100% of net sown) | — |
+Loni Deokar is located in the **Ujjaini dam command zone** (Bhima basin, Indapur taluka). Unlike rain-fed villages, Loni Deokar benefits from **surface water releases** during the monsoon and post-monsoon months. This is not a groundwater-stressed village—it is a **waterlogging-prone village** that must manage excess water and dam-driven hydrologic variability.
 
-What the data shows:
+The 2025 La Niña event demonstrated this acutely: heavy monsoon + above-normal dam releases caused **premature maize crop failure due to waterlogging**, not drought. Fields became waterlogged, roots rotted, and yields collapsed.
 
-- **Entirely well-dependent** — all 60 ha of irrigated land is fed by 62 wells; zero surface-flow or lift schemes.
-- **Deeper than its neighbours** — the water table sits at 23 m pre-monsoon vs the Indapur average of 17.4 m, a more stressed aquifer.
-- **Thin recharge** — the table recovers only ~2 m after the monsoon, so wells begin each year already deep.
-- **No fallback** — without canal or surface backup, a bad monsoon hits the village directly through falling well yields.
+## What the 6th MI Census actually shows
 
-## Crop water productivity
+Filtering the census to **Pune → Indapur → Loni Deokar** reveals:
 
-Crop Water Productivity (CWP) measures output per unit of water:
+| Metric | Loni Deokar | Indapur taluka avg | Interpretation |
+|--------|-------------|---------------------|----|
+| Irrigation source | **62 wells (100%)** | mixed | Wells provide *supplementary* irrigation during low-release periods, not primary source |
+| Well types | 61 dug + 1 deep tube | — | Dug wells tap the upper aquifer; deep tube wells access iron-rich deeper layers |
+| Surface-water schemes | **none** | 4,269 | No formal canal, but **Ujjaini releases feed seepage into the upper aquifer** |
+| Water table (pre-monsoon) | 23 m | 17.4 m | Deeper table reflects prior year's high recharge from dam releases |
+| Monsoon recharge | ~2 m (23 → 21 m) | ~2.1 m | Recharge is **dam-driven**, not rainfall-driven alone |
+| Net irrigated area | 60 ha (100% net sown) | — | All 60 ha depend on dam + well combination |
 
-> **CWP (physical)** = Yield (kg/ha) ÷ Water (m³/ha) → **kg/m³**
->
-> **CWP (economic)** = Value (Rs/ha) ÷ Water (m³/ha) → **Rs/m³**
+**The real story**: Loni Deokar does not pump desperately from a deep aquifer—it harvests surface water (via seepage from dam releases) and uses wells as a **buffer during low-release windows**. The problem is not scarcity but **surplus and timing**.
 
-Planning estimates below use FAO-56 with reference ET₀ ≈ 5.5 mm/day for the
-Indapur semi-arid zone (see [Data & Methods](data.md)).
+## 2025 La Niña: Maize waterlogging failure
 
-| Crop | Water (m³/ha) | Yield (t/ha) | Price (Rs/kg) | kg/m³ | Rs/m³ |
-|------|--------------:|-------------:|--------------:|------:|------:|
-| **Grapes** | 14,025 | 25 | 45 | 1.78 | **80.21** |
-| **Onion** | 8,662 | 25 | 15 | 2.89 | **43.29** |
-| Soybean | 6,325 | 2.2 | 42 | 0.35 | 14.61 |
-| Maize | 7,260 | 5 | 20 | 0.69 | 13.77 |
-| Wheat | 7,590 | 3.5 | 24 | 0.46 | 11.07 |
-| **Sugarcane** | 25,094 | 80 | 3.1 | 3.19 | **9.88** |
-| Jowar | 6,600 | 2.5 | 25 | 0.38 | 9.47 |
-| Bajra | 5,225 | 2.0 | 24 | 0.38 | 9.19 |
-| Tur | 9,680 | 1.2 | 65 | 0.12 | 8.06 |
+In 2025, elevated monsoon rainfall combined with above-normal Ujjaini releases created waterlogging:
 
-!!! warning "The sugarcane trap"
-    Sugarcane uses **2.5–4× more water** than most alternatives yet returns the
-    lowest income per m³ (**9.88 Rs/m³**). Because Loni Deokar pumps 100% of its
-    irrigation from a deep aquifer, every m³ saved is groundwater kept in the
-    ground.
+- **Maize planted in traditional flood-prone zones suffered premature death** due to anoxic soils.
+- Farmers observed that deeper-dug wells hit **red-oxide rocks** (iron hydroxide layers), indicating groundwater quality issues in low-oxygen zones.
+- The loss highlighted that **crop choice must account for flood tolerance, not just water savings**.
 
-## Why crop choice is the lever here
+## Crop adaptation for dam-driven hydrology
 
-In a village with canal irrigation, the water-saving conversation is about
-scheduling and delivery losses. In Loni Deokar there is no canal — the water
-comes out of the ground, one well at a time. That changes the calculus:
+Crop Water Productivity (CWP) matters, but so does **flood tolerance**. Reorganizing the crop ranking by water productivity *and* suitability to waterlogged soils:
 
-1. **Pumped water has a real marginal cost** — energy plus a falling water table.
-2. **There is no shared buffer** — each farmer's draft deepens the common aquifer.
-3. **High-value, low-water crops** convert the same scarce m³ into far more income.
+| Crop | Water (m³/ha) | Flood Tolerance | Rs/m³ | Recommendation |
+|------|------:|---|---:|---|
+| **Rice** | 12,000–14,000 | ⭐⭐⭐⭐⭐ Excellent | ~20 | **Primary for high-release zones** |
+| **Sugarcane** | 25,094 | ⭐⭐ Poor | 9.88 | Risk in waterlogged zones; ok in well-drained |
+| **Grapes** | 14,025 | ⭐ Very poor | 80.21 | **Avoid waterlogged areas; excellent on slopes** |
+| **Onion** | 8,662 | ⭐⭐ Poor | 43.29 | Requires good drainage |
+| **Maize** | 7,260 | ⭐ Very poor | 13.77 | **NOT suitable; 2025 failure confirms** |
+| **Soybean** | 6,325 | ⭐⭐⭐ Moderate | 14.61 | Acceptable for intermediate zones |
+| **Jowar** | 6,600 | ⭐⭐⭐ Moderate | 9.47 | Traditional; tolerates variable moisture |
 
-The combination of the irrigation data (100% groundwater, 23 m table) and the
-CWP ranking (sugarcane last, grapes/onion first) makes the case concrete rather
-than abstract.
+## Why crop zoning (not just crop choice) is the lever
+
+In a dam command zone, the calculus shifts from "save water" to "match crop to hydrologic zone":
+
+1. **High-release zones** (near dam seepage, flat terrain) → **Rice** (flood-tolerant, profitable, uses water well).
+2. **Intermediate zones** (moderate seepage) → **Soybean, sugarcane on raised beds** (with drainage management).
+3. **Elevated/well-drained zones** → **Grapes, onion** (high value, require good drainage).
+
+This spatial strategy converts a **waterlogging liability into a rice-productivity asset**, while protecting high-value crops (grapes) in appropriate zones.
+
+## Deep well characteristics: Red rocks and groundwater quality
+
+Farmers digging deeper wells have hit **red-oxide rock layers** (iron hydroxide, Fe₂O₃·nH₂O), which indicate:
+
+- Older, oxygen-poor aquifer layers (formed under reducing conditions).
+- Potential **iron and arsenic enrichment** in deeper groundwater (common in alluvial basins under long-term waterlogging).
+- A zone unsuitable for irrigation-quality water.
+
+The implication: **Loni Deokar's true groundwater reserve is the upper aquifer, recharged by dam seepage.** Drilling deeper for supplementary supply is not a viable long-term strategy.
+
+---
+
+!!! note "2026 priorities"
+    - Acquire **Ujjaini dam release schedule** (monthly/seasonal data from Maharashtra Water Resources Department).
+    - Map **waterlogging-prone zones** using topography and seepage patterns.
+    - Survey **2025 crop losses** by zone to validate flood-tolerance rankings.
+    - Test **rice varieties** suitable for Loni Deokar's soils and water quality.

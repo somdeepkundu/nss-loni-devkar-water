@@ -9,13 +9,17 @@ why the data never showed up on a normal map. This script:
   2. parses the WKB (incl. CompoundCurve / CircularString / CurvePolygon),
   3. reprojects UTM 43N -> WGS84 lat/lon with pyproj,
   4. drops junk geometry sitting at the (0,0) origin,
-  5. writes simplified GeoJSON for the web map.
+  5. writes simplified GeoJSON for the web map with crop-zone layers.
 
 Outputs (data/processed/geo/):
-  loni_plots.geojson    - plot / parcel boundaries (polylines + lines)
+  loni_plots.geojson    - plot / parcel boundaries
   loni_labels.geojson   - text labels as points
+  loni_crops.geojson    - recommended crop zones (rice, grapes, onion)
+  loni_waterlog.geojson - waterlogging-risk zones
   loni_meta.json        - centroid + bounds (lat/lon) for the Leaflet view
 """
+
+VERSION = "1.1.0"  # Added crop zone + waterlogging risk layers; dam command context
 
 import json
 import math

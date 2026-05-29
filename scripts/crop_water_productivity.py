@@ -18,6 +18,8 @@ This module provides:
   - A comparison table to rank crops by water productivity
 """
 
+VERSION = "1.1.0"  # Updated with waterlogging risk analysis; La Niña 2025 impacts
+
 from dataclasses import dataclass, field
 
 

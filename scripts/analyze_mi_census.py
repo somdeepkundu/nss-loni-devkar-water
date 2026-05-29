@@ -7,7 +7,11 @@ Filter & analyze 6th Minor Irrigation Census for Loni Devkar (Indapur, Pune).
   933 MB Dug Wells file never loads fully into memory.
 - Writes JSON + CSV summaries to data/processed/ for the GitHub Pages
   infographics.
+- Corrected interpretation: wells are supplementary in the Ujjaini dam command,
+  not primary source.
 """
+
+VERSION = "1.1.0"  # Ujjaini dam context added; waterlogging-focused interpretation
 
 import json
 from pathlib import Path

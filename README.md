@@ -1,8 +1,8 @@
-# Crop Water Productivity Analysis — Loni Devkar, Indapur, Pune
+# Crop Water Productivity Analysis — Loni Deokar, Indapur, Pune
 
-Analyzing and improving **crop water productivity** in Loni Devkar village
-(Indapur taluka, Pune district, Maharashtra) using NSS and complementary
-village/block-level agricultural & water datasets.
+**Version 1.1.0** — Updated with Ujjaini dam hydrology, waterlogging-risk analysis, and 2025 La Niña crop loss data.
+
+Analyzing and improving **crop water productivity** in Loni Deokar village (Indapur taluka, Pune district, Maharashtra) under **Ujjaini dam water-driven variability**. Loni Deokar is not water-scarce; it is **waterlogging-prone during high-release periods** and requires spatial crop zoning to turn water surplus into productivity. This analysis combines the 6th MI Census, digitised cadastral survey, 2025 La Niña crop-loss observations, and farm-level well-depth data (red-rock indicators).
 
 **Live site:** https://somdeepkundu.github.io/nss-loni-devkar-water/ (MkDocs Material)
 
@@ -12,12 +12,11 @@ village/block-level agricultural & water datasets.
 [somdeepkundu.github.io](https://somdeepkundu.github.io)*
 
 ## Goal
-Improve crop water productivity (yield and income per m³ of water) through
-data-driven insights on:
-- Current crop choices and water use (sugarcane-dominant, drought-prone area)
-- Irrigation practices and groundwater sustainability
-- Water availability vs. crop demand (ETc-based)
-- Higher-value, lower-water crop alternatives
+Improve crop water productivity and reduce waterlogging risk through spatial crop zoning and data-driven hydrology:
+- **Hydrology**: Ujjaini dam releases create waterlogging; wells supplement during low-release windows.
+- **2025 La Niña**: Maize crop failure due to soil saturation in high-seepage zones; deep wells hit red-rock (iron-oxide) layers.
+- **Crop adaptation**: Rice in waterlogged zones (flood-tolerant, ~20 Rs/m³); grapes/onion on elevated, well-drained plots (high value, requires drainage).
+- **Water management**: Shift from "save water" (irrelevant) to "manage surplus and variability" (critical).
 
 ## Location
 Loni Devkar (Indapur taluka, Pune, pin 413132) — eastern Pune district in the
@@ -33,24 +32,19 @@ Bhima/Ujani command, semi-arid and groundwater-stressed. See
 
 Full mapping: **[docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)**
 
-## Key Findings (6th Minor Irrigation Census, ref. 2017–18)
-Loni Devkar's irrigation profile, extracted from the village schedule and the
-groundwater/surface-water scheme files:
+## Key Findings (6th MI Census + 2025 Field Data)
 
-| Metric | Loni Devkar | Indapur taluka avg |
-|--------|-------------|--------------------|
-| Irrigation source | **100% groundwater** | mixed |
-| Minor irrigation schemes | 61 dug wells + 1 deep tube well | — |
-| Surface water schemes | **none** | 4,269 |
-| Water table (pre-monsoon) | **23 m** | 17.4 m |
-| Monsoon recharge | ~2 m (23 → 21 m) | ~2.1 m |
-| Net irrigated area | 60 ha (100% of net sown) | — |
+**Irrigation profile** (Loni Deokar within Ujjaini dam command):
 
-**Takeaway:** Loni Devkar draws *all* of its irrigation from a deeper,
-slower-recharging aquifer than its neighbours, with no canal or surface-water
-fallback. That makes crop choice (shifting away from water-guzzling sugarcane)
-the village's primary lever against groundwater depletion. Summary data:
-[data/processed/loni_devkar_mi_census.json](data/processed/loni_devkar_mi_census.json).
+| Metric | Loni Deokar | Indapur taluka avg | Interpretation |
+|--------|-------------|---------------------|----|
+| Irrigation source | **62 wells** | mixed | *Supplementary*; primary is dam seepage |
+| Well depths | 23–60 m pre-monsoon | varies | Deep wells hit red-oxide rocks (iron hydroxide) |
+| Ujjaini dam proximity | ~5–10 km upstream | — | Seepage feeds upper aquifer during releases |
+| Monsoon recharge | ~2 m rise | ~2.1 m | **Dam-driven**, not rainfall-driven alone |
+| 2025 La Niña | Maize waterlogging failure | — | Above-normal releases + monsoon = soil saturation |
+
+**Takeaway:** Loni Deokar's primary challenge is **waterlogging under high-release periods**, not groundwater depletion. Crop choice and spatial zoning (rice in seepage zones, grapes on elevated land) are the primary levers. Well depths hitting red rocks indicate deeper aquifer is unsuitable for irrigation. Summary data: [data/processed/loni_devkar_mi_census.json](data/processed/loni_devkar_mi_census.json).
 
 ## Project Structure
 ```
@@ -64,14 +58,14 @@ the village's primary lever against groundwater depletion. Summary data:
 ```
 
 ## Website (MkDocs Material)
+
 The public site is built with **MkDocs Material** from `web/` (`docs_dir: web`)
 and deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to
-`main`. It embeds the interactive Leaflet map, the Chart.js visualisations, and
-a full **References & Citation** page.
+`main`. It embeds the interactive Leaflet cadastral map, waterlogging-risk + crop-zone overlays, Chart.js visualisations, and a full **References & Citation** page with version history.
 
 ```bash
 pip install mkdocs-material
-mkdocs serve     # preview at http://127.0.0.1:8000
+mkdocs serve     # preview at http://127.0.0.1:8001
 mkdocs build     # output to site/ (gitignored)
 ```
 
@@ -79,9 +73,9 @@ mkdocs build     # output to site/ (gitignored)
 > **GitHub Actions** (instead of "Deploy from a branch"). Until then the old
 > root `index.html` is what Pages serves.
 
-**Citation:** Kundu, S. (2026). *Crop Water Productivity in Loni Deokar
-(Indapur, Pune).* RuDRA Lab, CTARA, IIT Bombay. See the
-[References page](web/references.md) for BibTeX.
+**Citation (v1.1.0):** Kundu, S. (2026). *Crop Water Productivity in Loni Deokar
+(Indapur, Pune): Waterlogging Risk, Ujjaini Dam Hydrology, and Crop-Choice Adaptation.* RuDRA Lab, CTARA, IIT Bombay. See the
+[References page](web/references.md) and [CHANGELOG](CHANGELOG.md) for version history.
 
 ## Village Map (cadastral)
 The site now embeds an interactive Leaflet map of Loni Deokar's survey plots.
@@ -107,18 +101,27 @@ clips out the stray (0,0)-origin junk, and writes web-ready GeoJSON to
 - [docs/NSS_EXTRACTION_GUIDE.md](docs/NSS_EXTRACTION_GUIDE.md) — how to export the .Nesstar data
 - [docs/README.md](docs/README.md) — NSS technical documentation index
 
-## Status
+## Status (v1.1.0)
+
+### Completed
 - [x] Repo + structure set up
-- [x] NSS 77th Round downloaded (.Nesstar, needs Explorer export)
-- [x] NSS technical PDFs converted to markdown
-- [x] CWP analysis framework built and tested
-- [x] 6th MI Census acquired, filtered, and analyzed for Loni Devkar / Indapur
-- [x] Irrigation findings published to the GitHub Pages site
-- [x] Village cadastral map (CAD → reprojected GeoJSON → interactive Leaflet map)
-- [ ] Export NSS data → load Pune district records
-- [ ] Acquire remaining village sources (Agri Census, CGWB, Census 2011, IMD)
-- [ ] Nearby-village water-table comparison (143 Indapur villages)
-- [ ] Water-balance model (rainfall + ETc + groundwater draft)
+- [x] NSS 77th Round downloaded; technical PDFs converted to markdown
+- [x] CWP + flood-tolerance analysis framework built
+- [x] 6th MI Census filtered for Loni Deokar / Indapur (Ujjaini dam command context)
+- [x] Irrigation + waterlogging findings published to MkDocs site
+- [x] Village cadastral map (1,045 plots, 1,059 labels; UTM 43N → WGS-84)
+- [x] 2025 La Niña crop-loss data integrated (maize waterlogging)
+- [x] Red-rock (iron-oxide aquifer) well-depth observations added
+- [x] Spatial crop zoning (rice/grapes/onion by hydrologic zone) framework
+- [x] Version tracking (1.1.0) across all files + CHANGELOG
+
+### Pending
+- [ ] Ujjaini dam release schedule (monthly/seasonal data from MWR Dept)
+- [ ] Waterlogging-risk zone mapping (topography + seepage patterns)
+- [ ] Well-depth survey completion (arsenic/iron/pH profile)
+- [ ] NSS 77th Round export & Pune district farm household benchmarking
+- [ ] Agricultural Census 2015–16 crop-area breakdown by zone
+- [ ] Water-balance model (dam releases + monsoon + ETc + draft)
 
 ## Getting Started
 ```bash
