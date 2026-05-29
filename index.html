@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Water Productivity — Loni Devkar, Pune</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">CWP Analysis</div>
+            <ul class="nav-links">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#cwp-framework">Framework</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#data">Data</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Crop Water Productivity</h1>
+            <h2>Loni Devkar, Indapur, Pune</h2>
+            <p>Improving agricultural water productivity in a water-stressed region</p>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number">25,094</div>
+                <div class="stat-label">m³/ha (Sugarcane)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">9.88</div>
+                <div class="stat-label">Rs/m³ (Income)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">413132</div>
+                <div class="stat-label">Village Pincode</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem">
+        <div class="container">
+            <h2>The Challenge</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="icon">💧</div>
+                    <h3>Water Stress</h3>
+                    <p>Loni Devkar lies in the drought-prone Bhima/Ujani command. Groundwater is over-exploited.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">🌾</div>
+                    <h3>Sugarcane Dominance</h3>
+                    <p>Sugarcane is the primary cash crop but consumes 3x the water of alternatives with lower return per drop.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">📊</div>
+                    <h3>Low Water Productivity</h3>
+                    <p>Current crop mix yields only ~10 Rs/m³. Better crop choices could reach 40–80 Rs/m³.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CWP Framework -->
+    <section id="cwp-framework" class="framework">
+        <div class="container">
+            <h2>Crop Water Productivity Framework</h2>
+            <div class="framework-content">
+                <div class="framework-text">
+                    <h3>Definition</h3>
+                    <p><strong>CWP = Crop Output / Water Input</strong></p>
+                    <ul>
+                        <li><strong>Physical:</strong> kg/m³ (food per drop)</li>
+                        <li><strong>Economic:</strong> Rs/m³ (income per drop)</li>
+                    </ul>
+                    <h3>Water Basis</h3>
+                    <ul>
+                        <li>Irrigation applied (from surveys)</li>
+                        <li>ETc = Evapotranspiration (crop need)</li>
+                        <li>Total = rainfall + irrigation</li>
+                    </ul>
+                </div>
+                <div class="framework-diagram">
+                    <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Input -->
+                        <rect x="10" y="10" width="80" height="60" fill="#4DA6FF" stroke="#333" stroke-width="2" rx="5"/>
+                        <text x="50" y="45" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Water Input</text>
+
+                        <!-- Arrow -->
+                        <path d="M 100 40 L 140 40" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <!-- Process -->
+                        <rect x="140" y="10" width="80" height="60" fill="#FFB84D" stroke="#333" stroke-width="2" rx="5"/>
+                        <text x="180" y="35" text-anchor="middle" font-size="12" font-weight="bold">Crop</text>
+                        <text x="180" y="52" text-anchor="middle" font-size="12" font-weight="bold">Growth</text>
+
+                        <!-- Arrow -->
+                        <path d="M 230 40 L 270 40" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+
+                        <!-- Output -->
+                        <rect x="220" y="10" width="80" height="60" fill="#4DFF4D" stroke="#333" stroke-width="2" rx="5"/>
+                        <text x="260" y="35" text-anchor="middle" font-size="12" font-weight="bold">Yield</text>
+                        <text x="260" y="52" text-anchor="middle" font-size="12" font-weight="bold">(kg/ha)</text>
+
+                        <!-- Formula -->
+                        <text x="150" y="130" text-anchor="middle" font-size="16" font-weight="bold">CWP = Yield / Water</text>
+                        <text x="150" y="155" text-anchor="middle" font-size="12">Higher = Better water efficiency</text>
+
+                        <!-- Arrow marker -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Section -->
+    <section id="analysis" class="analysis">
+        <div class="container">
+            <h2>Crop Water Productivity Comparison</h2>
+            <p class="note">Planning estimates using FAO-56 ET₀ = 5.5 mm/day (Indapur semi-arid)</p>
+
+            <div class="chart-container">
+                <canvas id="cwpChart"></canvas>
+            </div>
+
+            <div class="crop-table">
+                <h3>Detailed Rankings</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Water (m³/ha)</th>
+                            <th>Yield (t/ha)</th>
+                            <th>Price (Rs/kg)</th>
+                            <th>kg/m³</th>
+                            <th>Rs/m³</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="high">
+                            <td>Grapes</td>
+                            <td>14,025</td>
+                            <td>25</td>
+                            <td>45</td>
+                            <td><strong>1.78</strong></td>
+                            <td><strong>80.21</strong></td>
+                        </tr>
+                        <tr class="high">
+                            <td>Onion</td>
+                            <td>8,662</td>
+                            <td>25</td>
+                            <td>15</td>
+                            <td><strong>2.89</strong></td>
+                            <td><strong>43.29</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Soybean</td>
+                            <td>6,325</td>
+                            <td>2.2</td>
+                            <td>42</td>
+                            <td>0.35</td>
+                            <td>14.61</td>
+                        </tr>
+                        <tr>
+                            <td>Maize</td>
+                            <td>7,260</td>
+                            <td>5</td>
+                            <td>20</td>
+                            <td>0.69</td>
+                            <td>13.77</td>
+                        </tr>
+                        <tr class="low">
+                            <td><strong>Sugarcane</strong></td>
+                            <td><strong>25,094</strong></td>
+                            <td><strong>80</strong></td>
+                            <td><strong>3.1</strong></td>
+                            <td><strong>3.19</strong></td>
+                            <td><strong>9.88</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Jowar</td>
+                            <td>6,600</td>
+                            <td>2.5</td>
+                            <td>25</td>
+                            <td>0.38</td>
+                            <td>9.47</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p><strong>Sugarcane:</strong> The dominant crop uses 3× more water than most alternatives but generates only <strong>9.88 Rs/m³</strong>.</p>
+                <p><strong>Grapes & Onion:</strong> Lower water input, 4–8× higher income per m³.</p>
+                <p><strong>Opportunity:</strong> Gradual shift to high-value, low-water crops could improve farm income AND reduce groundwater stress.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Section -->
+    <section id="data" class="data-status">
+        <div class="container">
+            <h2>Data Acquisition Status</h2>
+            <p>Real analysis begins once these sources are downloaded and processed.</p>
+
+            <div class="status-grid">
+                <div class="status-item pending">
+                    <div class="status-icon">⏳</div>
+                    <h4>NSS 77th Round</h4>
+                    <p>Pune district household survey</p>
+                </div>
+                <div class="status-item pending">
+                    <div class="status-icon">⏳</div>
+                    <h4>6th MI Census</h4>
+                    <p>Village irrigation schemes</p>
+                </div>
+                <div class="status-item pending">
+                    <div class="status-icon">⏳</div>
+                    <h4>Agricultural Census</h4>
+                    <p>Crop area & patterns</p>
+                </div>
+                <div class="status-item pending">
+                    <div class="status-icon">⏳</div>
+                    <h4>CGWB Status</h4>
+                    <p>Groundwater levels</p>
+                </div>
+                <div class="status-item pending">
+                    <div class="status-icon">⏳</div>
+                    <h4>IMD Rainfall</h4>
+                    <p>Climate & water balance</p>
+                </div>
+                <div class="status-item pending">
+                    <div class="status-icon">⏳</div>
+                    <h4>Census 2011</h4>
+                    <p>Village demographics</p>
+                </div>
+            </div>
+
+            <div class="cta">
+                <p><a href="https://github.com/somdeepkundu/nss-loni-devkar-water" target="_blank">View on GitHub</a> | <a href="https://github.com/somdeepkundu/nss-loni-devkar-water/blob/main/docs/DATA_ACQUISITION_GUIDE.md" target="_blank">Data Guide</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Crop Water Productivity Analysis — Loni Devkar, Indapur, Pune</p>
+            <p>NSS 77th Round | AgriCensus | CGWB | IMD | ICRISAT</p>
+            <p><a href="https://github.com/somdeepkundu/nss-loni-devkar-water">GitHub Repository</a></p>
+        </div>
+    </footer>
+
+    <script src="assets/dashboard.js"></script>
+</body>
+</html>
