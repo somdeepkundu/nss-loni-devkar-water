@@ -15,14 +15,14 @@ theme:
     repo: fontawesome/brands/github
   palette:
     - scheme: default
-      primary: custom
-      accent: cyan
+      primary: blue
+      accent: green
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: custom
-      accent: cyan
+      primary: blue
+      accent: green
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
