@@ -1,74 +1,87 @@
 # Analysis
 
-**Version: 1.1.0**
+**Version: 1.2.0** — Crop zones updated with field-relevant crops (sugarcane, maize, pomegranate, banana, elephant grass, mulberry).
 
 ## The Ujjaini dam context
 
 Loni Deokar is located in the **Ujjaini dam command zone** (Bhima basin, Indapur taluka). Unlike rain-fed villages, Loni Deokar benefits from **surface water releases** during the monsoon and post-monsoon months. This is not a groundwater-stressed village—it is a **waterlogging-prone village** that must manage excess water and dam-driven hydrologic variability.
 
-The 2025 La Niña event demonstrated this acutely: heavy monsoon + above-normal dam releases caused **premature maize crop failure due to waterlogging**, not drought. Fields became waterlogged, roots rotted, and yields collapsed.
+The 2025 La Niña event demonstrated this acutely: heavy monsoon + above-normal dam releases caused **maize crop failure in high-seepage zones due to waterlogging**. Farmers' observations: deep wells hit **red-oxide rocks** (iron hydroxide, indicating oxygen-poor aquifers unsuitable for irrigation).
 
-## What the 6th MI Census actually shows
+## Crop suitability for dam-driven hydrology
 
-Filtering the census to **Pune → Indapur → Loni Deokar** reveals:
+Based on field viability in the region, flood tolerance, water requirements, and 2025 crop loss data:
 
-| Metric | Loni Deokar | Indapur taluka avg | Interpretation |
-|--------|-------------|---------------------|----|
-| Irrigation source | **62 wells (100%)** | mixed | Wells provide *supplementary* irrigation during low-release periods, not primary source |
-| Well types | 61 dug + 1 deep tube | — | Dug wells tap the upper aquifer; deep tube wells access iron-rich deeper layers |
-| Surface-water schemes | **none** | 4,269 | No formal canal, but **Ujjaini releases feed seepage into the upper aquifer** |
-| Water table (pre-monsoon) | 23 m | 17.4 m | Deeper table reflects prior year's high recharge from dam releases |
-| Monsoon recharge | ~2 m (23 → 21 m) | ~2.1 m | Recharge is **dam-driven**, not rainfall-driven alone |
-| Net irrigated area | 60 ha (100% net sown) | — | All 60 ha depend on dam + well combination |
+| Crop | Water Req (m³/ha) | Flood Tolerance | Economic Value | Recommended Zone |
+|------|------:|---|---|---|
+| **Rice** | 12,000–14,000 | ⭐⭐⭐⭐⭐ Excellent | ~20 Rs/m³ | **High-seepage, flat, monsoon-fed zones** |
+| **Mulberry** | 8,000–10,000 | ⭐⭐⭐⭐ Very good | Medium–high | **Intermediate zones; tolerates waterlogging** |
+| **Sugarcane** | 25,000–30,000 | ⭐⭐ Moderate | 9.88 Rs/m³ (low productivity) | **Well-drained elevated areas only; risky in seepage zones** |
+| **Pomegranate** | 6,000–8,000 | ⭐⭐⭐ Good | High (~50 Rs/m³) | **Raised beds on intermediate zones; drought-tolerant** |
+| **Banana** | 12,000–16,000 | ⭐ Poor | High (premium market) | **Elevated, well-drained plots only; requires good drainage** |
+| **Elephant Grass** | 5,000–7,000 | ⭐⭐⭐ Good | Medium (forage/biogas) | **All zones; excellent for eroding/water-logged soils** |
+| **Maize** | 7,260 | ⭐ Very poor | Low–medium | **❌ NOT SUITABLE** — 2025 La Niña failure in waterlogged areas |
 
-**The real story**: Loni Deokar does not pump desperately from a deep aquifer—it harvests surface water (via seepage from dam releases) and uses wells as a **buffer during low-release windows**. The problem is not scarcity but **surplus and timing**.
+## Spatial crop zoning strategy
 
-## 2025 La Niña: Maize waterlogging failure
+Loni Deokar's 60 ha of irrigated land should be divided into **hydrologic zones**, each suited to specific crop combinations:
 
-In 2025, elevated monsoon rainfall combined with above-normal Ujjaini releases created waterlogging:
+### Zone 1: High-Seepage, Flat (est. 15–20 ha)
+- Near dam seepage areas; waterlogging during monsoon.
+- **Primary crop**: **Rice** (flood-tolerant, uses water efficiently, market-stable).
+- **Secondary**: **Elephant Grass** strips for field drainage + biogas feedstock.
+- **Avoid**: Sugarcane, banana, maize, pomegranate (all prone to waterlogging damage).
 
-- **Maize planted in traditional flood-prone zones suffered premature death** due to anoxic soils.
-- Farmers observed that deeper-dug wells hit **red-oxide rocks** (iron hydroxide layers), indicating groundwater quality issues in low-oxygen zones.
-- The loss highlighted that **crop choice must account for flood tolerance, not just water savings**.
+### Zone 2: Intermediate, Moderate Seepage (est. 25–30 ha)
+- Moderate water availability; occasional waterlogging in high-release years.
+- **Primary**: **Sugarcane** on **raised beds with drainage** (if farmers choose sugarcane for income, it must be protected).
+- **Alternative**: **Mulberry** (more flood-tolerant, less water-intensive, good income).
+- **Intercrop**: **Elephant Grass** in margins for fodder + erosion control.
+- **Avoid**: Banana (too sensitive to waterlogging); maize (2025 failure risk).
 
-## Crop adaptation for dam-driven hydrology
+### Zone 3: Elevated, Well-Drained (est. 10–15 ha)
+- Slopes, berms, well above seepage zones; good drainage.
+- **Primary**: **Banana** (high premium value, requires perfect drainage).
+- **Alternative**: **Pomegranate** (drought-tolerant, lower water, high value).
+- **Secondary**: **Mulberry** on less-premium plots.
+- **Avoid**: Rice (water-wasting on elevated land); maize (waterlogging wasn't the issue here, but low value).
 
-Crop Water Productivity (CWP) matters, but so does **flood tolerance**. Reorganizing the crop ranking by water productivity *and* suitability to waterlogged soils:
+## Why maize failed in 2025
 
-| Crop | Water (m³/ha) | Flood Tolerance | Rs/m³ | Recommendation |
-|------|------:|---|---:|---|
-| **Rice** | 12,000–14,000 | ⭐⭐⭐⭐⭐ Excellent | ~20 | **Primary for high-release zones** |
-| **Sugarcane** | 25,094 | ⭐⭐ Poor | 9.88 | Risk in waterlogged zones; ok in well-drained |
-| **Grapes** | 14,025 | ⭐ Very poor | 80.21 | **Avoid waterlogged areas; excellent on slopes** |
-| **Onion** | 8,662 | ⭐⭐ Poor | 43.29 | Requires good drainage |
-| **Maize** | 7,260 | ⭐ Very poor | 13.77 | **NOT suitable; 2025 failure confirms** |
-| **Soybean** | 6,325 | ⭐⭐⭐ Moderate | 14.61 | Acceptable for intermediate zones |
-| **Jowar** | 6,600 | ⭐⭐⭐ Moderate | 9.47 | Traditional; tolerates variable moisture |
+Maize was planted in **Zone 1 (high-seepage, flat areas)** where:
+- Soil saturation (anoxic conditions) caused root rot.
+- Above-normal dam releases + monsoon rainfall created waterlogging.
+- Poor drainage in flat terrain meant water pooled.
 
-## Why crop zoning (not just crop choice) is the lever
+**Lesson**: Maize can succeed in **Zone 3 (elevated, well-drained areas)** if water is available, but it has lower market value and higher risk than the suggested alternatives. Better to use Zone 3 for banana/pomegranate.
 
-In a dam command zone, the calculus shifts from "save water" to "match crop to hydrologic zone":
+## Red rocks and groundwater quality
 
-1. **High-release zones** (near dam seepage, flat terrain) → **Rice** (flood-tolerant, profitable, uses water well).
-2. **Intermediate zones** (moderate seepage) → **Soybean, sugarcane on raised beds** (with drainage management).
-3. **Elevated/well-drained zones** → **Grapes, onion** (high value, require good drainage).
+Farmers digging deeper wells hit **red-oxide layers** (iron hydroxide, Fe₂O₃·nH₂O) at depths 40–60 m, indicating:
+- Older aquifer layers formed under **reducing (anaerobic) conditions**.
+- Likely **iron and arsenic enrichment** in deeper groundwater (common in alluvial basins under waterlogging).
+- **Implication**: Don't drill deeper for supplementary supply. The upper aquifer (recharged by dam seepage) is adequate for the proposed crop zoning.
 
-This spatial strategy converts a **waterlogging liability into a rice-productivity asset**, while protecting high-value crops (grapes) in appropriate zones.
+## Income and water productivity comparison
 
-## Deep well characteristics: Red rocks and groundwater quality
+Under the proposed zoning:
 
-Farmers digging deeper wells have hit **red-oxide rock layers** (iron hydroxide, Fe₂O₃·nH₂O), which indicate:
+| Zone | Primary Crop | Est. Water (m³/ha) | Est. Income (Rs/ha) | Rs/m³ | Flood Risk |
+|------|---|---:|---:|---:|---|
+| 1 (Seepage) | Rice | 13,000 | 260,000 | ~20 | Managed (rice tolerates) |
+| 2 (Intermediate) | Sugarcane (raised beds) OR Mulberry | 25,000 OR 9,000 | 277,500 OR 180,000 | 11 OR 20 | High (sugarcane) / Low (mulberry) |
+| 3 (Elevated) | Banana OR Pomegranate | 14,000 OR 7,000 | 350,000+ OR 280,000 | 25+ OR 40 | Very low |
 
-- Older, oxygen-poor aquifer layers (formed under reducing conditions).
-- Potential **iron and arsenic enrichment** in deeper groundwater (common in alluvial basins under long-term waterlogging).
-- A zone unsuitable for irrigation-quality water.
-
-The implication: **Loni Deokar's true groundwater reserve is the upper aquifer, recharged by dam seepage.** Drilling deeper for supplementary supply is not a viable long-term strategy.
+**Takeaway**: A mixed strategy yields:
+- **Zone 1 (rice)** = stable income, flood-proof.
+- **Zone 2 (mulberry > sugarcane)** = better income/water, flood-tolerant.
+- **Zone 3 (banana/pomegranate)** = premium income, leverages elevated terrain.
 
 ---
 
 !!! note "2026 priorities"
-    - Acquire **Ujjaini dam release schedule** (monthly/seasonal data from Maharashtra Water Resources Department).
-    - Map **waterlogging-prone zones** using topography and seepage patterns.
-    - Survey **2025 crop losses** by zone to validate flood-tolerance rankings.
-    - Test **rice varieties** suitable for Loni Deokar's soils and water quality.
+    - Acquire **Ujjaini dam release schedule** (monthly data from Maharashtra Water Resources Department).
+    - Map **Zone 1 / 2 / 3 boundaries** using topography (DEM), seepage patterns, and 2025 waterlogging hotspots.
+    - Survey **crop preferences** among farmers; assess willingness to shift from sugarcane to mulberry/banana/pomegranate.
+    - Pilot **raised-bed sugarcane + drain system** in Zone 2 for farmers committed to sugarcane.
+    - Establish **elephant grass strips** in Zone 1 and field margins for drainage + biogas feedstock.

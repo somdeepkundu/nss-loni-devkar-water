@@ -1,6 +1,6 @@
 # References & Citation
 
-**Version: 1.1.0** — Updated to include Ujjaini dam hydrology, 2025 La Niña impacts, and waterlogging-risk analysis.
+**Version: 1.2.0** — Crop zones finalized with six field-viable crops: sugarcane, maize, pomegranate, banana, elephant grass, mulberry.
 
 ## How to cite this work
 
@@ -15,7 +15,7 @@
 </div>
 
 > Kundu, S. (2026). *Crop Water Productivity in Loni Deokar (Indapur, Pune):
-> Waterlogging Risk, Ujjaini Dam Hydrology, and Crop-Choice Adaptation.*
+> Spatial Crop Zoning Under Ujjaini Dam-Driven Waterlogging.*
 > RuDRA Lab, CTARA, IIT Bombay.
 > https://somdeepkundu.github.io/nss-loni-devkar-water/
 
@@ -23,7 +23,7 @@
 @misc{kundu2026loni,
   author       = {Kundu, Somdeep},
   title        = {Crop Water Productivity in Loni Deokar (Indapur, Pune):
-                  Waterlogging Risk, Ujjaini Dam Hydrology, and Crop-Choice Adaptation},
+                  Spatial Crop Zoning Under Ujjaini Dam-Driven Waterlogging},
   year         = {2026},
   institution  = {RuDRA Lab, CTARA, Indian Institute of Technology Bombay},
   howpublished = {\url{https://somdeepkundu.github.io/nss-loni-devkar-water/}}

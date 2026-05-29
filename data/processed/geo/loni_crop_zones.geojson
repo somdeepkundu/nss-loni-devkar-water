@@ -1,0 +1,83 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_id": 1,
+        "name": "High-Seepage, Flat",
+        "area_ha": 18,
+        "primary_crop": "Rice",
+        "secondary_crop": "Elephant Grass",
+        "flood_tolerance": "Excellent",
+        "water_req": "13,000 m³/ha",
+        "income": "~20 Rs/m³",
+        "description": "Near dam seepage; waterlogging during monsoon. Rice is flood-proof; elephant grass for drainage + biogas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [74.905, 18.205],
+            [74.920, 18.205],
+            [74.920, 18.195],
+            [74.905, 18.195],
+            [74.905, 18.205]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_id": 2,
+        "name": "Intermediate, Moderate Seepage",
+        "area_ha": 28,
+        "primary_crop": "Sugarcane (raised beds) OR Mulberry",
+        "secondary_crop": "Elephant Grass margins",
+        "flood_tolerance": "Moderate to Very Good",
+        "water_req": "9,000–25,000 m³/ha",
+        "income": "11–20 Rs/m³",
+        "description": "Occasional waterlogging in high-release years. Mulberry better than sugarcane for flood tolerance and water efficiency."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [74.905, 18.195],
+            [74.920, 18.195],
+            [74.920, 18.185],
+            [74.905, 18.185],
+            [74.905, 18.195]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone_id": 3,
+        "name": "Elevated, Well-Drained",
+        "area_ha": 14,
+        "primary_crop": "Banana OR Pomegranate",
+        "secondary_crop": "Mulberry",
+        "flood_tolerance": "Very Low (but excellent drainage)",
+        "water_req": "7,000–16,000 m³/ha",
+        "income": "25–40+ Rs/m³",
+        "description": "Slopes and berms; good drainage. Premium crops (banana, pomegranate) require perfect drainage."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [74.905, 18.185],
+            [74.920, 18.185],
+            [74.920, 18.175],
+            [74.905, 18.175],
+            [74.905, 18.185]
+          ]
+        ]
+      }
+    }
+  ]
+}

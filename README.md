@@ -1,6 +1,6 @@
 # Crop Water Productivity Analysis — Loni Deokar, Indapur, Pune
 
-**Version 1.1.0** — Updated with Ujjaini dam hydrology, waterlogging-risk analysis, and 2025 La Niña crop loss data.
+**Version 1.2.0** — Crop-zone recommendations finalized with six field-viable crops (rice, sugarcane, mulberry, pomegranate, banana, elephant grass).
 
 Analyzing and improving **crop water productivity** in Loni Deokar village (Indapur taluka, Pune district, Maharashtra) under **Ujjaini dam water-driven variability**. Loni Deokar is not water-scarce; it is **waterlogging-prone during high-release periods** and requires spatial crop zoning to turn water surplus into productivity. This analysis combines the 6th MI Census, digitised cadastral survey, 2025 La Niña crop-loss observations, and farm-level well-depth data (red-rock indicators).
 
@@ -73,8 +73,8 @@ mkdocs build     # output to site/ (gitignored)
 > **GitHub Actions** (instead of "Deploy from a branch"). Until then the old
 > root `index.html` is what Pages serves.
 
-**Citation (v1.1.0):** Kundu, S. (2026). *Crop Water Productivity in Loni Deokar
-(Indapur, Pune): Waterlogging Risk, Ujjaini Dam Hydrology, and Crop-Choice Adaptation.* RuDRA Lab, CTARA, IIT Bombay. See the
+**Citation (v1.2.0):** Kundu, S. (2026). *Crop Water Productivity in Loni Deokar
+(Indapur, Pune): Spatial Crop Zoning Under Ujjaini Dam-Driven Waterlogging.* RuDRA Lab, CTARA, IIT Bombay. See the
 [References page](web/references.md) and [CHANGELOG](CHANGELOG.md) for version history.
 
 ## Village Map (cadastral)
@@ -101,7 +101,7 @@ clips out the stray (0,0)-origin junk, and writes web-ready GeoJSON to
 - [docs/NSS_EXTRACTION_GUIDE.md](docs/NSS_EXTRACTION_GUIDE.md) — how to export the .Nesstar data
 - [docs/README.md](docs/README.md) — NSS technical documentation index
 
-## Status (v1.1.0)
+## Status (v1.2.0)
 
 ### Completed
 - [x] Repo + structure set up
@@ -112,8 +112,9 @@ clips out the stray (0,0)-origin junk, and writes web-ready GeoJSON to
 - [x] Village cadastral map (1,045 plots, 1,059 labels; UTM 43N → WGS-84)
 - [x] 2025 La Niña crop-loss data integrated (maize waterlogging)
 - [x] Red-rock (iron-oxide aquifer) well-depth observations added
-- [x] Spatial crop zoning (rice/grapes/onion by hydrologic zone) framework
-- [x] Version tracking (1.1.0) across all files + CHANGELOG
+- [x] Spatial crop zoning (rice/sugarcane/mulberry/pomegranate/banana/elephant grass by hydrologic zone) framework
+- [x] Crop-zone interactive map with color-coded recommendations
+- [x] Version tracking (1.2.0) across all files + CHANGELOG
 
 ### Pending
 - [ ] Ujjaini dam release schedule (monthly/seasonal data from MWR Dept)

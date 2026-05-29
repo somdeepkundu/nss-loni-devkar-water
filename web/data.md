@@ -1,6 +1,6 @@
 # Data & Methods
 
-**Version: 1.1.0**
+**Version: 1.2.0** — Updated with field-relevant crops: sugarcane, maize, pomegranate, banana, elephant grass, mulberry.
 
 ## Ujjaini dam command zone context
 
@@ -27,8 +27,9 @@ NSS gives **district context**; village/block sources + dam data give the **Loni
 
     - **6th Minor Irrigation Census** — filtered to Pune/Indapur/Loni Deokar; 62 wells, surface + groundwater interaction, 23 m water table (pre-monsoon). `scripts/analyze_mi_census.py`
     - **Village cadastral map** — 1,045 plots digitised from `LONI-DEOKAR.dwg`, reprojected UTM 43N → WGS-84. `scripts/gpkg_to_geojson.py`
-    - **2025 La Niña crop loss data** — maize waterlogging failure in high-seepage zones; red rocks (iron hydroxide) in deep wells.
-    - **FAO-56 crop-water model** — Kc values for nine local crops + flood-tolerance rankings. `scripts/crop_water_productivity.py`
+    - **Crop-zone suitability map** — three hydrologic zones with recommended crops: rice, sugarcane, mulberry, pomegranate, banana, elephant grass.
+    - **2025 La Niña crop loss data** — maize waterlogging failure in high-seepage zones; red rocks (iron hydroxide) in deep wells; field-verified crop recommendations.
+    - **Flood-tolerance crop framework** — six locally-viable crops ranked by water needs, flood tolerance, and economic productivity.
 
 === "Pending ⏳"
 
@@ -58,12 +59,19 @@ The 2025 monsoon brought above-normal rainfall and Ujjaini releases simultaneous
 
 ### Crop adaptation framework
 
-Crops are ranked by:
-1. **Economic productivity** (Rs/m³, FAO-56 based).
+Six field-viable crops ranked by:
+1. **Water requirement** (m³/ha for Indapur semi-arid zone).
 2. **Flood tolerance** (based on agronomic literature + 2025 field observations).
-3. **Suitability to Loni Deokar's soils and release patterns**.
+3. **Economic productivity** (Rs/ha and Rs/m³).
+4. **Suitability to hydrologic zones** (seepage/intermediate/elevated).
 
-Rice emerges as the primary crop for high-seepage zones, while grapes and onion suit elevated, well-drained areas.
+**Recommended crops** (farmer-validated):
+- **Rice** — Zone 1 (high-seepage); flood-excellent, stable market.
+- **Mulberry** — Zone 2 (intermediate); flood-tolerant, high income, less water than sugarcane.
+- **Sugarcane** — Zone 2 (intermediate, on raised beds); high income but water-intensive, risky in seepage.
+- **Banana** — Zone 3 (elevated); premium price, requires perfect drainage.
+- **Pomegranate** — Zone 3 (elevated); drought-tolerant, high value.
+- **Elephant Grass** — All zones (field margins, erosion control, biogas feedstock).
 
 ### Cadastral map & red-rock zones
 

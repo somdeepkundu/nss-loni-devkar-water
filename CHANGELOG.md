@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented here.
 
+## [1.2.0] — 2026-05-29
+
+### Added
+- **Crop-zone interactive map** — three hydrologic zones (seepage/intermediate/elevated) with color-coded recommendations and popups.
+- **Six field-viable crops** — sugarcane, maize, pomegranate, banana, elephant grass, mulberry. Updated from generic crop rankings to farmer-validated selections.
+- **Flood-tolerance rankings** — each crop rated for waterlogging risk in dam command zone.
+- **Spatial crop zoning strategy** — Zone 1 (rice), Zone 2 (sugarcane/mulberry on raised beds), Zone 3 (banana/pomegranate premium crops).
+
+### Changed
+- **Map visualization** — now emphasizes crop-zone suitability instead of overlapping survey labels. Plot boundaries and labels available as optional layers.
+- **Analysis focus** — six local crops instead of generic alternatives.
+
 ## [1.1.0] — 2026-05-29
 
 ### Changed

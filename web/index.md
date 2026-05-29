@@ -25,21 +25,27 @@ Loni Deokar sits in the **Ujjaini dam command zone** (Bhima basin, eastern Pune 
 </div>
 </div>
 
-## Village cadastral map
+## Crop-zone map
 
-Survey plot boundaries digitised from the village CAD drawing (`LONI-DEOKAR.dwg`), reprojected from UTM 43N to WGS-84 — **1,045 plots and 1,059 survey numbers**. Layers show recommended crop zones (rice for waterlogged, grapes/onion for drained) and waterlogging-risk areas (red = high seepage from dam).
+Survey plot boundaries digitised from the village CAD drawing (`LONI-DEOKAR.dwg`), reprojected from UTM 43N to WGS-84. **Colored zones show hydrologic suitability and recommended crops:**
+
+- 🟢 **Zone 1 (Green)**: High-seepage, flat → **Rice** (flood-tolerant, stable income)
+- 🟠 **Zone 2 (Orange)**: Intermediate seepage → **Sugarcane (raised beds)** or **Mulberry** (better flood tolerance, high income)
+- 🔴 **Zone 3 (Red)**: Elevated, well-drained → **Banana / Pomegranate** (premium crops, require drainage)
+
+**Toggle layers** (top-right) to show plot boundaries and survey numbers. Click zones for details.
 
 <div id="map"></div>
 
-## Water sources: Dam seepage + wells
+## Why crop zoning works in Ujjaini command
 
-Loni Deokar's irrigation is a **hybrid system**: Ujjaini dam releases create seepage into the upper aquifer during monsoon/post-monsoon; wells tap this recharged layer during low-release windows.
+Loni Deokar's irrigation is a **hybrid system**: Ujjaini dam releases create seepage into the upper aquifer during monsoon/post-monsoon; wells supplement during low-release windows. Waterlogging is not a curse—it's a feature to leverage.
 
 <div class="viz"><canvas id="schemeChart"></canvas></div>
 
-## Income vs. waterlogging risk
+## Crop suitability: Water, income, and flood tolerance
 
-Crops ranked by economic productivity (*Rs/m³*) and suitability to waterlogged soils. Rice dominates high-seepage zones (flood-tolerant, ~20 Rs/m³). Grapes and onion offer high income but require good drainage (elevated areas only). Maize is unsuitable (2025 failure confirms).
+Six crops suit Loni Deokar. The right choice depends on your plot's zone. Rice anchors Zone 1 (flood-proof). Mulberry is Zone 2's flood-tolerant alternative to sugarcane. Banana and pomegranate command premium prices in Zone 3.
 
 <div class="viz"><canvas id="cwpChart"></canvas></div>
 
