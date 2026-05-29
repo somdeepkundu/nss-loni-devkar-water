@@ -73,9 +73,59 @@ function createCWPChart() {
     });
 }
 
+// Irrigation scheme breakdown — Loni Devkar (6th MI Census, ref. 2017-18)
+const schemeData = {
+    labels: ['Dug Wells', 'Deep Tube Wells', 'Medium Tube Wells', 'Shallow Tube Wells', 'Surface Flow', 'Surface Lift'],
+    loni: [61, 1, 0, 0, 0, 0]
+};
+
+function createSchemeChart() {
+    const el = document.getElementById('schemeChart');
+    if (!el) return;
+    const ctx = el.getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: schemeData.labels,
+            datasets: [{
+                label: 'Minor irrigation schemes in Loni Devkar',
+                data: schemeData.loni,
+                backgroundColor: schemeData.loni.map((v, i) =>
+                    i === 0 ? '#1E88E5' : (v > 0 ? '#66BB6A' : '#E0E0E0')),
+                borderColor: '#333',
+                borderWidth: 1,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Loni Devkar relies almost entirely on dug wells',
+                    font: { size: 14, weight: 'bold' }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: (c) => c.parsed.x + ' scheme' + (c.parsed.x === 1 ? '' : 's')
+                    }
+                }
+            },
+            scales: {
+                x: { beginAtZero: true, title: { display: true, text: 'Number of schemes' } }
+            }
+        }
+    });
+}
+
 // Initialize chart when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     createCWPChart();
+    createSchemeChart();
 
     // Add smooth scroll to sections
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

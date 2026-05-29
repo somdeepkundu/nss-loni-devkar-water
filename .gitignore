@@ -1,9 +1,13 @@
-# Data files
+# Data files (raw is huge / licensed source dumps — keep out)
 data/*.csv
 data/*.xlsx
 data/*.json
 data/raw/
-data/processed/
+
+# Keep the small processed analysis outputs (used by the site)
+!data/processed/
+!data/processed/indapur_irrigation_by_village.csv
+!data/processed/loni_devkar_mi_census.json
 
 # Python
 __pycache__/

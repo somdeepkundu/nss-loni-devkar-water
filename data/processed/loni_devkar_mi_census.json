@@ -1,0 +1,85 @@
+{
+  "location": {
+    "district": "PUNE",
+    "taluka": "INDAPUR",
+    "village": "Loni Devkar (LONI)",
+    "census": "6th Minor Irrigation Census (ref. 2017-18)"
+  },
+  "loni_devkar": {
+    "geographical_area_ha": 334,
+    "cultivable_area_ha": 100,
+    "net_sown_area_ha": 60,
+    "net_irrigated_area_ha": 60,
+    "gross_irrigated_total_ha": 60,
+    "irrigated_kharif_ha": 42,
+    "irrigated_rabi_ha": 12,
+    "irrigated_perennial_ha": 6,
+    "gw_level_pre_monsoon_m": 23.0,
+    "gw_level_post_monsoon_m": 21.0,
+    "irrigation_intensity_pct": 100.0
+  },
+  "indapur_context": {
+    "villages_count": 143,
+    "total_net_sown_ha": 27858,
+    "total_net_irrigated_ha": 27858,
+    "avg_gw_pre_monsoon_m": 17.4,
+    "avg_gw_post_monsoon_m": 15.3,
+    "avg_irrigation_intensity_pct": 100.0
+  },
+  "scheme_breakdown": {
+    "loni_devkar": {
+      "Dug Wells": 61,
+      "Deep Tube Wells": 1,
+      "Medium Tube Wells": 0,
+      "Shallow Tube Wells": 0,
+      "Surface Flow": 0,
+      "Surface Lift": 0
+    },
+    "indapur_taluka": {
+      "Dug Wells": 18583,
+      "Deep Tube Wells": 970,
+      "Medium Tube Wells": 701,
+      "Shallow Tube Wells": 750,
+      "Surface Flow": 3929,
+      "Surface Lift": 340
+    }
+  },
+  "irrigation_potential": {
+    "Dug Wells": {
+      "indapur_ipc_ha": 33279.5,
+      "indapur_ipu_ha": 30865.5,
+      "loni_ipc_ha": 108.2,
+      "loni_ipu_ha": 104.0
+    },
+    "Deep Tube Wells": {
+      "indapur_ipc_ha": 1577.7,
+      "indapur_ipu_ha": 1464.0,
+      "loni_ipc_ha": 0.8,
+      "loni_ipu_ha": 0.8
+    },
+    "Medium Tube Wells": {
+      "indapur_ipc_ha": 1288.8,
+      "indapur_ipu_ha": 1232.2,
+      "loni_ipc_ha": 0.0,
+      "loni_ipu_ha": 0.0
+    },
+    "Shallow Tube Wells": {
+      "indapur_ipc_ha": 1243.2,
+      "indapur_ipu_ha": 1192.6,
+      "loni_ipc_ha": 0.0,
+      "loni_ipu_ha": 0.0
+    },
+    "Surface Flow": {
+      "indapur_ipc_ha": 6810.8,
+      "indapur_ipu_ha": 6536.3,
+      "loni_ipc_ha": 0.0,
+      "loni_ipu_ha": 0.0
+    },
+    "Surface Lift": {
+      "indapur_ipc_ha": 788.8,
+      "indapur_ipu_ha": 757.4,
+      "loni_ipc_ha": 0.0,
+      "loni_ipu_ha": 0.0
+    }
+  }
+}
