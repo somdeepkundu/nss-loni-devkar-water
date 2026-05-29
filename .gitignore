@@ -12,6 +12,9 @@ data/raw/
 !data/processed/geo/*.geojson
 !data/processed/geo/*.json
 
+# MkDocs build output
+site/
+
 # Python
 __pycache__/
 *.py[cod]

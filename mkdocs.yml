@@ -1,0 +1,82 @@
+site_name: "Crop Water Productivity — Loni Deokar"
+site_description: "Improving crop water productivity in Loni Deokar (Indapur, Pune) — irrigation, groundwater and crop-choice analysis. RuDRA Lab, CTARA, IIT Bombay."
+site_author: "Somdeep Kundu"
+site_url: "https://somdeepkundu.github.io/nss-loni-devkar-water/"
+repo_url: "https://github.com/somdeepkundu/nss-loni-devkar-water"
+repo_name: "somdeepkundu/nss-loni-devkar-water"
+copyright: "&copy; Somdeep Kundu · RuDRA Lab · CTARA · IIT Bombay"
+
+docs_dir: web
+
+theme:
+  name: material
+  icon:
+    logo: material/water-pump
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: custom
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - content.code.copy
+    - toc.follow
+  font:
+    text: DM Sans
+    code: Roboto Mono
+
+extra_css:
+  - https://unpkg.com/leaflet@1.9.4/dist/leaflet.css
+  - assets/extra.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/chart.js
+  - https://unpkg.com/leaflet@1.9.4/dist/leaflet.js
+  - assets/charts.js
+  - assets/map.js
+
+markdown_extensions:
+  - md_in_html
+  - attr_list
+  - admonition
+  - tables
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: material/email
+      link: mailto:somdeep@iitb.ac.in
+      name: somdeep@iitb.ac.in
+    - icon: material/web
+      link: https://somdeepkundu.in
+      name: somdeepkundu.in
+    - icon: fontawesome/brands/github
+      link: https://somdeepkundu.github.io
+      name: somdeepkundu.github.io
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/somdeep-kundu
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Analysis: analysis.md
+  - Data & Methods: data.md
+  - References & Citation: references.md

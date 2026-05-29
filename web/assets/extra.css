@@ -1,0 +1,112 @@
+/* ═══════════════════════════════════════════════════════════════
+   Loni Deokar — Crop Water Productivity
+   Theme: Deep Water — teal / cyan over warm sand
+   Fonts: DM Serif Display (headings) + DM Sans (body)
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ─── Primary palette (header / nav / accents) ───────────────── */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color:        #00695C;
+  --md-primary-fg-color--light: #00897B;
+  --md-primary-fg-color--dark:  #004D40;
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: #ffffffb3;
+}
+[data-md-color-scheme="slate"] [data-md-color-primary="custom"] {
+  --md-primary-fg-color:        #0b1f1d;
+  --md-primary-fg-color--light: #12302c;
+  --md-primary-fg-color--dark:  #07140f;
+}
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0c1614;
+}
+
+/* ─── Typography ─────────────────────────────────────────────── */
+.md-typeset { font-family: 'DM Sans', sans-serif; }
+.md-typeset h1, .md-typeset h2, .md-typeset h3,
+.md-header__title, .hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+.md-typeset h2 { color: var(--md-primary-fg-color); margin-top: 2.4rem; }
+
+.md-content__inner { animation: fadeUp 0.5s ease both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* ─── Hero ───────────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 3.2rem;
+  margin: -1.2rem -0.8rem 2rem;
+  border-radius: 0 0 14px 14px;
+  color: #fff;
+  background: linear-gradient(135deg, #004D40 0%, #00897B 55%, #26A69A 100%);
+  box-shadow: 0 10px 30px rgba(0, 77, 64, 0.25);
+}
+.hero h1 { color: #fff; font-size: 2.8rem; margin: 0 0 0.3rem; }
+.hero .sub { font-size: 1.25rem; opacity: 0.95; font-weight: 300; }
+.hero .tag { font-size: 0.95rem; opacity: 0.85; margin-top: 0.6rem; }
+
+/* ─── Stat cards ─────────────────────────────────────────────── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  margin: 1.6rem 0;
+}
+.stat-card {
+  background: var(--md-code-bg-color);
+  border-radius: 12px;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  border-top: 4px solid var(--md-primary-fg-color);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(0,0,0,0.12); }
+.stat-card .num { font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--md-primary-fg-color); line-height: 1.1; }
+.stat-card .lbl { font-size: 0.85rem; opacity: 0.8; margin-top: 0.4rem; }
+.stat-card.alert { border-top-color: #EF5350; }
+.stat-card.alert .num { color: #E53935; }
+
+/* ─── Chart + map containers ─────────────────────────────────── */
+.viz {
+  position: relative;
+  height: 380px;
+  background: var(--md-default-bg-color);
+  border-radius: 12px;
+  padding: 0.8rem;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  margin: 1.4rem 0;
+}
+#map {
+  height: 540px;
+  border-radius: 12px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.12);
+  margin: 1.4rem 0;
+  z-index: 0;
+}
+.plot-label {
+  color: #B71C1C;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #fff;
+  pointer-events: none;
+}
+
+/* ─── Citation card ──────────────────────────────────────────── */
+.cite-card {
+  border: 1px solid var(--md-primary-fg-color--light);
+  border-left: 5px solid var(--md-primary-fg-color);
+  border-radius: 10px;
+  padding: 1.3rem 1.5rem;
+  background: var(--md-code-bg-color);
+  margin: 1.4rem 0;
+}
+.cite-card .who { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--md-primary-fg-color); }
+.cite-card .aff { opacity: 0.85; margin: 0.2rem 0 0.6rem; }
+.cite-card .links a { margin-right: 1.1rem; font-weight: 600; white-space: nowrap; }

@@ -4,6 +4,13 @@ Analyzing and improving **crop water productivity** in Loni Devkar village
 (Indapur taluka, Pune district, Maharashtra) using NSS and complementary
 village/block-level agricultural & water datasets.
 
+**Live site:** https://somdeepkundu.github.io/nss-loni-devkar-water/ (MkDocs Material)
+
+*Somdeep Kundu · RuDRA Lab · CTARA · IIT Bombay ·
+[somdeep@iitb.ac.in](mailto:somdeep@iitb.ac.in) ·
+[somdeepkundu.in](https://somdeepkundu.in) ·
+[somdeepkundu.github.io](https://somdeepkundu.github.io)*
+
 ## Goal
 Improve crop water productivity (yield and income per m³ of water) through
 data-driven insights on:
@@ -55,6 +62,26 @@ the village's primary lever against groundwater depletion. Summary data:
 ├── analysis/          # Outputs and insights
 └── docs/              # NSS documentation (md) + strategy guides
 ```
+
+## Website (MkDocs Material)
+The public site is built with **MkDocs Material** from `web/` (`docs_dir: web`)
+and deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to
+`main`. It embeds the interactive Leaflet map, the Chart.js visualisations, and
+a full **References & Citation** page.
+
+```bash
+pip install mkdocs-material
+mkdocs serve     # preview at http://127.0.0.1:8000
+mkdocs build     # output to site/ (gitignored)
+```
+
+> **One-time setup:** in the repo's **Settings → Pages**, set *Source* to
+> **GitHub Actions** (instead of "Deploy from a branch"). Until then the old
+> root `index.html` is what Pages serves.
+
+**Citation:** Kundu, S. (2026). *Crop Water Productivity in Loni Deokar
+(Indapur, Pune).* RuDRA Lab, CTARA, IIT Bombay. See the
+[References page](web/references.md) for BibTeX.
 
 ## Village Map (cadastral)
 The site now embeds an interactive Leaflet map of Loni Deokar's survey plots.
